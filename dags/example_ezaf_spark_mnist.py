@@ -52,6 +52,10 @@ dag = DAG(
             pattern=r"^$|^\S+/$",
             description="Airgap registry url. Trailing slash in the end is required",
         ),
+        "s3_secret_name": Param(
+	    "spark-s3-creds",
+            type="string",
+	),
     },
     render_template_as_native_obj=True,
     access_control={"All": {"can_read", "can_edit", "can_delete"}},
